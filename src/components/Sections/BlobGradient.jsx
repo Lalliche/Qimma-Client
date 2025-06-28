@@ -14,7 +14,7 @@ export default function BlobGradient() {
   const router = useRouter();
   const locale = useLocale();
   const handleClick = () => {
-    router.push(`/${locale}/register`);
+    router.push(`/${locale}#`);
   };
   useEffect(() => {
     const overlay = document.getElementById("dot-overlay");
