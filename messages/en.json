@@ -1,0 +1,95 @@
+{
+  "Services": {
+    "title": "Our Services",
+    "subtitle": "Everything we offer is designed to help you reach the Top.",
+    "cards": {
+      "camp": {
+        "title": "Kids' Summer Camp",
+        "description": "A summer full of inspiring experiences and activities that mix fun with knowledge.",
+        "slogan": "“Open for children — limited spots per session.”"
+      },
+      "courses": {
+        "title": "Courses & Workshops",
+        "description": "Fast, hands-on training in high-demand fields like tech, design, marketing and much more.",
+        "slogan": "“Join our upcoming sessions To Upgrade.”"
+      },
+      "events": {
+        "title": "Event Concept & Organization",
+        "description": "From concept to execution - we help communities organize youth-led events with impact.",
+        "slogan": "“Designed for those bringing ideas to life.”"
+      },
+      "studio": {
+        "title": "Studio & Creative Support",
+        "description": "Need to film, record, or launch your brand? Our studio supports creators and small businesses.",
+        "slogan": "“Ideal for promo videos, product shoots, or online content.”"
+      }
+    }
+  },
+  "Hero": {
+    "title1": "You're closer to the ",
+    "title2": "top than you think.",
+    "subtitle": "And between you and reaching it… is simply believing in your first step.",
+    "cta": "Get started"
+  },
+  "About": {
+    "title": "What is Qimma?",
+    "subtitle1": "Qimma is where those who believe the future is made — not awaited — come together.",
+    "subtitle2": "We give young people the space to learn, explore, and carve their own path.",
+    "cards": {
+      "team": {
+        "title": "Team Achievement",
+        "desc": "Lasting collaboration… continuous growth."
+      },
+      "practice": {
+        "title": "Practical Learning",
+        "desc": "Don't settle for knowledge… apply it to achieve results."
+      },
+      "creativity": {
+        "title": "Creativity & Innovation",
+        "desc": "Ideas that challenge norms and shape the future."
+      }
+    }
+  },
+  "WhyUs": {
+    "title": "Why Choose Us?",
+    "points": {
+      "byYouth": {
+        "title1": "Made By",
+        "title2": "Youth",
+        "desc": "We know the journey — we’re walking it too."
+      },
+      "learnByDoing": {
+        "title": "Teach Through Practice",
+        "desc": "Less talk… more work. That’s the path to success."
+      },
+      "flexible": {
+        "title": "Flexible & Collaborative",
+        "desc": "We adapt, co-create, and let youth lead."
+      },
+      "livingSpace": {
+        "title": "Living Learning Space",
+        "desc": "A place where you learn in an interactive way."
+      }
+    }
+  },
+  "Join": {
+    "title1": "Want to be part ",
+    "title2": "of Qimma?",
+    "cta": "Get started"
+  },
+  "Footer": {
+    "desc": "You're closer to the top than you think.",
+    "rights": "All copyrights reserved. 2025",
+    "learning": "Learning",
+    "digital": "Digital",
+    "events": "Events"
+  },
+
+  "Menu": {
+    "title": "Menu",
+    "AboutUs": "About Us",
+    "Services": "Services",
+    "WhyUs": "Why Us ?",
+    "JoinUs": "Join Us"
+  }
+}
