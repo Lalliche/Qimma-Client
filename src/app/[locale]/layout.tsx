@@ -19,7 +19,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html lang={locale} dir={isRTL ? "rtl" : "ltr"} className="scroll-smooth">
       <body
-        className={`bg-[#eef2ff] text-[12px]  md:text-[14px] lg:text-[15px] xl:text-[16px] xxl:text-[20px] `}
+        className={`bg-[#eef2ff] text-[1px]  md:text-[14px] lg:text-[15px] xl:text-[16px] xxl:text-[20px] `}
         style={{
           fontFamily: isRTL ? "RH-ZAK, sans-serif" : "",
         }}

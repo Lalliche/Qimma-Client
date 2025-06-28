@@ -6,12 +6,14 @@ import Image from "next/image";
 import TranslationButton from "@/components/TranslationButton";
 import MenuButton from "@/components/MenuButton";
 
-const Header = () => {
-  const [blurBg, setBlurBg] = useState(false);
+const Header = ({ forceBlur = false }) => {
+  const [blurBg, setBlurBg] = useState(forceBlur);
   const [logoAnim, setLogoAnim] = useState("");
-  const prevBlur = useRef(false);
+  const prevBlur = useRef(forceBlur);
 
   useEffect(() => {
+    if (forceBlur) return; // Skip observer if forced blur is enabled
+
     const hero = document.getElementById("Hero");
     if (!hero) return;
 
@@ -19,7 +21,6 @@ const Header = () => {
       ([entry]) => {
         const isNowBlurred = !entry.isIntersecting;
 
-        // trigger animation if blur state changed
         if (prevBlur.current !== isNowBlurred) {
           setLogoAnim("animate-logo-pulse");
           setTimeout(() => setLogoAnim(""), 600);
@@ -33,10 +34,10 @@ const Header = () => {
 
     observer.observe(hero);
     return () => observer.disconnect();
-  }, []);
+  }, [forceBlur]);
 
   return (
-    <div className="fixed md:top-[1em] md:inset-x-[1em] inset-x-[3em] top-[3em] z-50  ">
+    <div className="fixed md:top-[1em] md:inset-x-[1em] inset-x-[3em] top-[3em] z-50">
       {/* Blur background layer */}
       <div
         className={`absolute rounded-full inset-0 z-[-1] pointer-events-none transition-all duration-500 ease-in-out ${

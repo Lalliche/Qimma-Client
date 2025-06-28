@@ -1,10 +1,18 @@
+"use client";
 import React from "react";
 import Button from "../Button";
 import ScrollRevealOnce from "@/hooks/ScrollRevealOnce";
 import { useTranslations } from "next-intl";
+import { useRouter } from "next/navigation";
+import { useLocale } from "next-intl";
 
 const JoinUs = () => {
   const t = useTranslations("Join");
+  const router = useRouter();
+  const locale = useLocale();
+  const handleClick = () => {
+    router.push(`/${locale}/register`);
+  };
   return (
     <div className="w-full text-center md:text-left  flex md:flex-row flex-col justify-between items-center px-[2em] sm:px-[6em] md:px-[10em] md:gap-[2em] gap-[4em]  xl:px-[15em] py-[8em]">
       <ScrollRevealOnce className="duration-1000 delay-200">
@@ -17,7 +25,8 @@ const JoinUs = () => {
       <ScrollRevealOnce className="duration-1000 delay-400">
         <Button
           text={t("cta")}
-          className="!w-fit !md:text-[1em] !text-[1.5em] "
+          className="!w-fit md:!text-[1em] !text-[1.5em] "
+          onClick={handleClick}
         />
       </ScrollRevealOnce>
     </div>

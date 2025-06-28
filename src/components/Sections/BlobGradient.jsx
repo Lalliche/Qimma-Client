@@ -6,9 +6,16 @@ import Image from "next/image";
 import Button from "../Button";
 import ScrollRevealOnce from "@/hooks/ScrollRevealOnce";
 import { useTranslations } from "next-intl";
+import { useRouter } from "next/navigation";
+import { useLocale } from "next-intl";
 
 export default function BlobGradient() {
   const t = useTranslations("Hero");
+  const router = useRouter();
+  const locale = useLocale();
+  const handleClick = () => {
+    router.push(`/${locale}/register`);
+  };
   useEffect(() => {
     const overlay = document.getElementById("dot-overlay");
     if (!overlay) return;
@@ -73,6 +80,7 @@ export default function BlobGradient() {
                 <div className="size-[1.625em] rounded-full bg-white  " />
               </div>
             }
+            onClick={handleClick}
           />
         </ScrollRevealOnce>
       </div>

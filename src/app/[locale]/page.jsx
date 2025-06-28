@@ -9,23 +9,11 @@ import Services from "@/components/Sections/Services";
 import WhyUs from "@/components/Sections/WhyUs";
 import JoinUs from "@/components/Sections/JoinUs";
 import Footer from "@/components/Sections/Footer";
-import TranslationButton from "@/components/TranslationButton";
-import MenuButton from "@/components/MenuButton";
 import Header from "@/components/Sections/Header";
 import ScrollRevealSectionOnce from "@/hooks/ScrollRevealSectionOnce";
-import ScrollRevealOnce from "@/hooks/ScrollRevealOnce";
 
 export default function HomePage() {
   /* const t = useTranslations("HomePage"); */
-  const locale = useLocale();
-  const router = useRouter();
-  const pathname = usePathname();
-  const targetLocale = locale === "en" ? "ar" : "en";
-
-  const switchLocale = () => {
-    setCookie("NEXT_LOCALE", targetLocale, { maxAge: 60 * 60 * 24 * 30 });
-    router.push(pathname, { locale: targetLocale });
-  };
 
   return (
     <div className="relative overflow-visible flex flex-col items-center gap-[2em]">

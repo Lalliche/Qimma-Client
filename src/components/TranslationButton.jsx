@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { IoLanguage } from "react-icons/io5";
+import { setCookie } from "cookies-next";
 
 const TranslationButton = () => {
   const [isHovered, setHovered] = useState(false);
@@ -17,6 +18,14 @@ const TranslationButton = () => {
 
   const handleSwitch = (targetLocale) => {
     if (targetLocale === currentLocale) return;
+
+    setCookie("NEXT_LOCALE", targetLocale, {
+      maxAge: 60 * 60 * 24 * 30,
+      path: "/",
+      sameSite: "strict",
+      secure: process.env.NODE_ENV === "production",
+    });
+
     const newPath = `/${targetLocale}/${restOfPath}`;
     router.push(newPath);
     setOpen(false);
@@ -54,7 +63,6 @@ const TranslationButton = () => {
       </div>
 
       {/* Dropdown */}
-      {/* Dropdown */}
       {open && (
         <div
           className={`absolute mt-[0.5em] w-fit min-w-[7em] bg-[#090812] text-white rounded-[1em] shadow-lg p-2 z-50 animate-dropdown ${
@@ -63,7 +71,7 @@ const TranslationButton = () => {
         >
           <button
             onClick={() => handleSwitch("en")}
-            className={`w-full text-left px-[0.75em] py-[0.5em]  rounded-[0.75em] transition-colors flex items-center justify-center gap-2 ${
+            className={`w-full text-left px-[0.75em] py-[0.5em] rounded-[0.75em] transition-colors flex items-center justify-center gap-2 ${
               currentLocale === "en"
                 ? "bg-white/10 font-bold"
                 : "hover:bg-white/5"
@@ -79,7 +87,7 @@ const TranslationButton = () => {
                 : "hover:bg-white/8"
             }`}
             style={{
-              fontFamily: "RH-ZAK", // Arabic font fallback
+              fontFamily: "RH-ZAK",
             }}
           >
             العربية
