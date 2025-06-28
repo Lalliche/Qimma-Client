@@ -80,10 +80,7 @@ const Us = () => {
         <Carousel className="w-full max-w-full" dir={"ltr"}>
           <CarouselContent>
             {cards.map((card, i) => (
-              <CarouselItem
-                key={i}
-                className="px-[1.5em] border-2 border-black "
-              >
+              <CarouselItem key={i} className="px-[1.5em]  ">
                 <AnimationCard
                   title={card.title}
                   description={card.description}
