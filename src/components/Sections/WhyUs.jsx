@@ -67,17 +67,19 @@ const WhyUs = () => {
       "linear-gradient(to bottom, #A1D0EC 0%, #458AEF 50%, #A1D0EC 99%)",
   };
   return (
-    <div className="relative w-full flex flex-col items-center gap-[4em] py-[4em] lg:px-[6em] px-[2em]  ">
+    <div className="relative w-full flex flex-col  items-center gap-[4em] py-[4em] lg:px-[6em] px-[2em]  ">
       <p className="text-[3em] text-center bg-gradient-to-b from-[#111020] to-[#1E3771] bg-clip-text text-transparent">
         {t("title")}
       </p>
 
       {/* Left Cloud */}
-      <Image
-        src={LeftCloud}
-        alt="Left Cloud"
-        className="absolute left-0 lg:top-[10%] top-[5%] lg:w-[20%] w-[40%] animate-slide-in-left z-30"
-      />
+      <div className="absolute left-0 lg:top-[10%] top-[5%] lg:w-[20%] w-[40%]  overflow-hidden pointer-events-none z-30  ">
+        <Image
+          src={LeftCloud}
+          alt="Left Cloud"
+          className=" opacity-0 will-change-transform  animate-slide-in-left z-30"
+        />
+      </div>
 
       {/* Background and Content Wrapper */}
       <div
@@ -140,7 +142,7 @@ const WhyUs = () => {
       </div>
 
       {/* Right Cloud */}
-      <div className="absolute right-0 lg:top-[25%] top-[50%] lg:w-[40%] w-[50%] overflow-hidden pointer-events-none z-0  ">
+      <div className="absolute  right-0 lg:top-[25%] top-[50%] lg:w-[40%] w-[50%] overflow-hidden pointer-events-none z-0  ">
         <Image
           src={RightCloud}
           alt="Right Cloud"

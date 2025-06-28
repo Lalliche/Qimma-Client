@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 
 const AnimationCard = ({ title, description, icon }) => {
+  console.log("rendering card", title);
   const overlayRef = useRef(null);
   const backgroundRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
