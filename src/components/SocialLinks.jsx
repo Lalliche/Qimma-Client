@@ -26,27 +26,27 @@ const SocialLinks = () => {
         {
           image: Facebook,
           altText: "Facebook",
-          link: "https://www.facebook.com/Qimma-100000000000000",
+          link: "https://www.facebook.com/profile.php?id=61577975517494",
         },
         {
           image: Instagram,
           altText: "Instagram",
-          link: "https://www.instagram.com/qimma/",
+          link: "https://www.instagram.com/qimma.learning/",
         },
         {
           image: TikTok,
           altText: "TikTok",
-          link: "https://TikTok.com/Qimma_",
+          link: "https://www.tiktok.com/@qimmatok",
         },
         {
           image: LinkedIn,
           altText: "LinkedIn",
-          link: "https://www.linkedin.com/company/qimma/",
+          link: "https://www.linkedin.com/company/qimmalearning",
         },
         {
           image: Discord,
           altText: "Discord",
-          link: "https://discord.gg/your-discord-link",
+          link: "https://discord.gg/rycMEXSnuu",
         },
       ].map((social, i) => (
         <div
