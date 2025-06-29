@@ -41,7 +41,7 @@ const Us = () => {
   return (
     <div className="w-full flex flex-col justify-center items-center gap-[4em] py-[4em]">
       {/* Title */}
-      <ScrollRevealOnce className="duration-1000 delay-200">
+      <ScrollRevealOnce className="duration-1000 delay-75">
         <div className="flex flex-col justify-center items-center sm:gap-[1em] gap-[2.5em]  ">
           {/*   <ScrollRevealOnce className="duration-1000 delay-200"> */}
           <p className="text-[2.75em] text-center bg-gradient-to-b from-[#111020] to-[#1E3771] bg-clip-text text-transparent">
