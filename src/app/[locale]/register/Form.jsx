@@ -55,30 +55,30 @@ const FormLayout = ({ t, formData, handleChange, handleSubmit, validity }) => {
             label={t("inputs.firstName")}
             value={formData.firstName}
             onChange={handleChange("firstName")}
-            valid={validity.firstName}
-            warning={t("warning")}
+            valid={validity.firstName.valid}
+            warning={validity.firstName.message}
           />
           <InputWithLabel
             label={t("inputs.lastName")}
             value={formData.lastName}
             onChange={handleChange("lastName")}
-            valid={validity.lastName}
-            warning={t("warning")}
+            valid={validity.lastName.valid}
+            warning={validity.lastName.message}
           />
           <InputWithLabel
             label={t("inputs.email")}
             type="email"
             value={formData.email}
             onChange={handleChange("email")}
-            valid={validity.email}
-            warning={t("warning")}
+            valid={validity.email.valid}
+            warning={validity.email.message}
           />
           <InputWithLabel
             label={t("inputs.phoneNumber")}
             value={formData.phoneNumber}
             onChange={handleChange("phoneNumber")}
-            valid={validity.phoneNumber}
-            warning={t("warning")}
+            valid={validity.phoneNumber.valid}
+            warning={validity.phoneNumber.message}
           />
         </div>
         <div className="w-full ">
@@ -127,22 +127,44 @@ const Form = () => {
 
   const handleSubmit = () => {
     const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email);
-    const isValidPhone = /^0[2-3-4-5-6-7]\d{8}$/.test(formData.phoneNumber);
+    const isValidPhone = /^(0[5-7]\d{8}|0[2-4]\d{7})$/.test(
+      formData.phoneNumber
+    );
 
     const newValidity = {
-      firstName: !!formData.firstName.trim(),
-      lastName: !!formData.lastName.trim(),
-      email: isValidEmail,
-      phoneNumber: isValidPhone,
+      firstName: {
+        valid: !!formData.firstName.trim(),
+        message: formData.firstName.trim() ? "" : t("warning"),
+      },
+      lastName: {
+        valid: !!formData.lastName.trim(),
+        message: formData.lastName.trim() ? "" : t("warning"),
+      },
+      email: {
+        valid: !!formData.email.trim() && isValidEmail,
+        message: !formData.email.trim()
+          ? t("warning")
+          : !isValidEmail
+          ? t("invalidEmail")
+          : "",
+      },
+      phoneNumber: {
+        valid: !!formData.phoneNumber.trim() && isValidPhone,
+        message: !formData.phoneNumber.trim()
+          ? t("warning")
+          : !isValidPhone
+          ? t("invalidPhone")
+          : "",
+      },
     };
 
     setValidity(newValidity);
 
-    const isFormValid = Object.values(newValidity).every(Boolean);
+    const isFormValid = Object.values(newValidity).every(
+      (field) => field.valid
+    );
 
     if (isFormValid) {
-      console.log("✅ Form submitted:", formData);
-
       fetch("/api/register", {
         method: "POST",
 
@@ -151,8 +173,7 @@ const Form = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log("✅ Form submitted successfully");
-          setShowToast(true);
+          data.success ? setShowToast(true) : null;
           setFormData({
             firstName: "",
             lastName: "",
