@@ -75,6 +75,9 @@ export default function BlobGradient() {
         <ScrollRevealOnce className="duration-1000 delay-100">
           <Button
             text={t("cta")}
+            npm
+            run
+            dev
             className="!w-fit  "
             icon={
               <div className="relative inline-block rounded-full p-[0.25em] m-2 bg-[linear-gradient(to_right,#69D2FF_0%,#00CFFF_21%,#458AEF_62%,#833CFE_100%)]">
