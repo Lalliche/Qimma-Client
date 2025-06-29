@@ -5,14 +5,19 @@ import LogoColored from "../../app/assets/Logo-Colored.png";
 import Image from "next/image";
 import TranslationButton from "@/components/TranslationButton";
 import MenuButton from "@/components/MenuButton";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Header = ({ forceBlur = false }) => {
   const [blurBg, setBlurBg] = useState(forceBlur);
   const [logoAnim, setLogoAnim] = useState("");
   const prevBlur = useRef(forceBlur);
 
+  const pathname = usePathname();
+  const currentLocale = pathname.split("/")[1] || "en";
+
   useEffect(() => {
-    if (forceBlur) return; // Skip observer if forced blur is enabled
+    if (forceBlur) return;
 
     const hero = document.getElementById("Hero");
     if (!hero) return;
@@ -54,15 +59,17 @@ const Header = ({ forceBlur = false }) => {
       {/* Header content */}
       <div className="w-full px-[1.25em] py-[0.5em] flex items-center justify-between transition-all duration-500 ease-in-out">
         <div className={`transition-all duration-500 ease-in-out ${logoAnim}`}>
-          <Image
-            src={blurBg ? LogoColored : LogoWhite}
-            alt="Logo"
-            className="size-[3.5em]"
-            priority
-          />
+          <Link href={`/${currentLocale}`}>
+            <Image
+              src={blurBg ? LogoColored : LogoWhite}
+              alt="Logo"
+              className="size-[3.5em] cursor-pointer"
+              priority
+            />
+          </Link>
         </div>
 
-        <div className="flex flex-row gap-[1em] items-center sm:w-fit w-[55%] justify-between sm:justify-center ">
+        <div className="flex flex-row gap-[1em] items-center sm:w-fit w-[55%] justify-between sm:justify-center">
           <TranslationButton />
           <MenuButton />
         </div>
