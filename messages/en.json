@@ -92,6 +92,7 @@
     "WhyUs": "Why Us ?",
     "JoinUs": "Join Us"
   },
+
   "Register": {
     "title": "Join us in our Open Day!",
     "subtitle": "can't wait to have you there with us!",
@@ -103,6 +104,8 @@
     },
     "cta": "Submit",
     "warning": "This field is required",
+    "invalidEmail": "Please enter a valid email address",
+    "invalidPhone": "Phone number must be a valid Algerian number",
     "successMessage": "Submitted successfully!"
   }
 }
