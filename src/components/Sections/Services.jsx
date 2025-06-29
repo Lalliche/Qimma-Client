@@ -26,6 +26,7 @@ const Services = () => {
         </div>
 
         {/* Cards */}
+
         <div className="relative grid sm:grid-cols-2 grid-cols-1 items-stretch gap-[2.5em] w-full md:px-[7em] sm:px-[4.5em] px-[2.5em] ">
           <Image
             src={LogoColored}
@@ -34,28 +35,28 @@ const Services = () => {
             className="absolute inset-0 sm:scale-100 xs:scale-150 scale-200 object-contain z-[-10] animate-rotate-in"
           />
 
-          <ScrollRevealOnce className="duration-1000 delay-200">
+          <ScrollRevealOnce className="duration-1000 delay-75">
             <ServicesCard
               title={t("cards.camp.title")}
               description={t("cards.camp.description")}
               slogan={t("cards.camp.slogan")}
             />
           </ScrollRevealOnce>
-          <ScrollRevealOnce className="duration-1000 delay-500">
+          <ScrollRevealOnce className="duration-1000 delay-100 ">
             <ServicesCard
               title={t("cards.courses.title")}
               description={t("cards.courses.description")}
               slogan={t("cards.courses.slogan")}
             />
           </ScrollRevealOnce>
-          <ScrollRevealOnce className="duration-1000 delay-700">
+          <ScrollRevealOnce className="duration-1000 delay-150 ">
             <ServicesCard
               title={t("cards.events.title")}
               description={t("cards.events.description")}
               slogan={t("cards.events.slogan")}
             />
           </ScrollRevealOnce>
-          <ScrollRevealOnce className="duration-1000 delay-1000">
+          <ScrollRevealOnce className="duration-1000 delay-200 ">
             <ServicesCard
               title={t("cards.studio.title")}
               description={t("cards.studio.description")}

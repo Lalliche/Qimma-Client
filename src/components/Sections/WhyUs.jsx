@@ -4,6 +4,7 @@ import Image from "next/image";
 import RightCloud from "@/app/assets/RCloud.png";
 import LeftCloud from "@/app/assets/LCloud.png";
 import { useTranslations } from "next-intl";
+import ScrollRevealOnce from "@/hooks/ScrollRevealOnce";
 
 const Content = ({ title, description, isFirst, isLast }) => {
   return (
@@ -68,9 +69,11 @@ const WhyUs = () => {
   };
   return (
     <div className="relative w-full flex flex-col overflow-hidden  items-center gap-[4em] py-[4em] lg:px-[6em] px-[2em]  ">
-      <p className="text-[3em] text-center bg-gradient-to-b from-[#111020] to-[#1E3771] bg-clip-text text-transparent">
-        {t("title")}
-      </p>
+      <ScrollRevealOnce className="duration-1000 delay-75">
+        <p className="text-[3em] text-center bg-gradient-to-b from-[#111020] to-[#1E3771] bg-clip-text text-transparent">
+          {t("title")}
+        </p>
+      </ScrollRevealOnce>
 
       {/* Left Cloud */}
       <div className="absolute  lg:top-[10%] sm:-left-[10em] -left-[5em]  top-[10%]  w-[40%]  overflow-hidden pointer-events-none z-30  ">
