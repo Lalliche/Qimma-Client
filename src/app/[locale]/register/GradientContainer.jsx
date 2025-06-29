@@ -1,21 +1,11 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
-import "../../app/globals.css";
-import LogoWhite from "../../app/assets/Logo-White.png";
+import { useEffect } from "react";
+import LogoWhite from "@/app/assets/Logo-White.png";
 import Image from "next/image";
-import Button from "../Button";
-import ScrollRevealOnce from "@/hooks/ScrollRevealOnce";
-import { useTranslations } from "next-intl";
-import { useRouter } from "next/navigation";
-import { useLocale } from "next-intl";
 
-export default function BlobGradient() {
-  const t = useTranslations("Hero");
-  const router = useRouter();
-  const locale = useLocale();
-  const handleClick = () => {
-    router.push(`/register`);
-  };
+import ScrollRevealOnce from "@/hooks/ScrollRevealOnce";
+
+export default function GradientContainer() {
   useEffect(() => {
     const overlay = document.getElementById("dot-overlay");
     if (!overlay) return;
@@ -46,35 +36,13 @@ export default function BlobGradient() {
 
   return (
     <div
-      className="blob-bg md:h-[120vh] h-[100vh] sm:text-[1em] text-[0.625em] relative overflow-hidden  "
+      className="blob-bg md:h-screen sm:h-[60vh] h-[50vh] sm:text-[1em] text-[0.625em] relative overflow-hidden  "
       style={{ borderRadius: "1.5em" }}
     >
       <div className="absolute w-full p-[4em]   h-full  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 flex flex-col items-center justify-center md:gap-[2.5em] gap-[6em]  ">
         <div className=" flex flex-col md:text-[1.0625em] sm:text-[1.25em]  text-[1.5em] items-center justify-center gap-[1.625em]">
           <Image src={LogoWhite} alt="Logo" className="size-[13em] " priority />
-          <p className="text-[3.5em] text-center text-white leading-tight">
-            {t("title1")}
-            <br />
-            {t("title2")}
-          </p>
-          <p
-            className="text-white font-light text-center  "
-            style={{ fontFamily: "var(--font-subtitle)" }}
-          >
-            {t("subtitle")}
-          </p>
         </div>
-
-        <Button
-          text={t("cta")}
-          className="!w-fit  "
-          icon={
-            <div className="relative inline-block rounded-full p-[0.25em] m-2 bg-[linear-gradient(to_right,#69D2FF_0%,#00CFFF_21%,#458AEF_62%,#833CFE_100%)]">
-              <div className="size-[1.625em] rounded-full bg-white  " />
-            </div>
-          }
-          onClick={handleClick}
-        />
       </div>
 
       {/* Dot Overlay */}

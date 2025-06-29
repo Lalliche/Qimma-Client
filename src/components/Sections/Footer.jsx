@@ -30,7 +30,7 @@ const Footer = () => {
             <React.Fragment key={text}>
               <p
                 className="text-[#090812] text-[1.25em] font-light"
-                style={{ fontFamily: "var(--font-outfit)" }}
+                style={{  fontFamily: "var(--font-subtitle)", }}
               >
                 {text}
               </p>
@@ -51,7 +51,7 @@ const Footer = () => {
       <ScrollRevealOnce className="duration-1000 delay-200">
         <p
           className="text-[#090812] text-[1.25em] font-light"
-          style={{ fontFamily: "var(--font-outfit)" }}
+          style={{  fontFamily: "var(--font-subtitle)",}}
         >
           {t("desc")}
         </p>
@@ -59,7 +59,7 @@ const Footer = () => {
       <ScrollRevealOnce className="duration-1000 delay-200">
         <p
           className="text-[#090812] text-[1.25em] font-light"
-          style={{ fontFamily: "var(--font-outfit)" }}
+          style={{ fontFamily: "var(--font-subtitle)", }}
         >
           {t("rights")}
         </p>

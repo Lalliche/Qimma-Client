@@ -18,8 +18,8 @@ const Services = () => {
             {t("title")}
           </p>
           <p
-            className="md:text-[1.25em] text-[2em]  font-light"
-            style={{ fontFamily: "var(--font-outfit)" }}
+            className="md:text-[1.25em] text-black/45 text-[2em]  font-light"
+            style={{ fontFamily: "var(--font-subtitle)" }}
           >
             {t("subtitle")}
           </p>

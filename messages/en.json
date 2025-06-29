@@ -91,5 +91,18 @@
     "Services": "Services",
     "WhyUs": "Why Us ?",
     "JoinUs": "Join Us"
+  },
+  "Register": {
+    "title": "Join us in our Open Day!",
+    "subtitle": "can't wait to have you there with us!",
+    "inputs": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phoneNumber": "Phone Number"
+    },
+    "cta": "Submit",
+    "warning": "This field is required",
+    "successMessage": "Submitted successfully!"
   }
 }

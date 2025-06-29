@@ -204,8 +204,8 @@ const AnimationCard = ({ title, description, icon }) => {
         <p
           className="text-center font-light transition-colors duration-500"
           style={{
-            fontFamily: "var(--font-outfit)",
-            color: isHovered ? "#ffffff" : "#000000",
+            fontFamily: "var(--font-subtitle)",
+            color: isHovered ? "#ffffff" : "rgba(0, 0, 0, 0.45)",
           }}
         >
           {description}

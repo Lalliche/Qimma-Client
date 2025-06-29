@@ -11,7 +11,7 @@ const JoinUs = () => {
   const router = useRouter();
   const locale = useLocale();
   const handleClick = () => {
-    router.push(`/${locale}#`);
+    router.push(`/register`);
   };
   return (
     <div className="w-full text-center md:text-left  flex md:flex-row flex-col justify-between items-center px-[2em] sm:px-[6em] md:px-[10em] md:gap-[2em] gap-[4em]  xl:px-[15em] py-[8em]">
@@ -25,7 +25,7 @@ const JoinUs = () => {
       {/*  <ScrollRevealOnce className="duration-1000 delay-400"> */}
       <Button
         text={t("cta")}
-        className="!w-fit md:!text-[1em] !text-[1.5em] "
+        className="!w-fit md:!text-[1em] !text-[1.25em] "
         onClick={handleClick}
       />
       {/* </ScrollRevealOnce> */}

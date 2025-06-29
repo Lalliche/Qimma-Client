@@ -50,7 +50,7 @@ const Us = () => {
         {/* <ScrollRevealOnce className="duration-1000 delay-200"> */}
         <p
           className="text-[1.25em] font-light text-center sm:w-fill w-full px-[5em]  "
-          style={{ fontFamily: "var(--font-outfit)" }}
+          style={{ fontFamily: "var(--font-subtitle)" }}
         >
           {t("subtitle1")}
           <br />

@@ -52,7 +52,7 @@ const Content = ({ title, description, isFirst, isLast }) => {
 
       <p
         className="text-[1.25em] font-light text-black/45"
-        style={{ fontFamily: "var(--font-outfit)" }}
+        style={{ fontFamily: "var(--font-subtitle)" }}
       >
         {description}
       </p>
@@ -67,13 +67,13 @@ const WhyUs = () => {
       "linear-gradient(to bottom, #A1D0EC 0%, #458AEF 50%, #A1D0EC 99%)",
   };
   return (
-    <div className="relative w-full flex flex-col  items-center gap-[4em] py-[4em] lg:px-[6em] px-[2em]  ">
+    <div className="relative w-full flex flex-col overflow-hidden  items-center gap-[4em] py-[4em] lg:px-[6em] px-[2em]  ">
       <p className="text-[3em] text-center bg-gradient-to-b from-[#111020] to-[#1E3771] bg-clip-text text-transparent">
         {t("title")}
       </p>
 
       {/* Left Cloud */}
-      <div className="absolute left-0 lg:top-[10%] top-[5%] lg:w-[20%] w-[40%]  overflow-hidden pointer-events-none z-30  ">
+      <div className="absolute  lg:top-[10%] sm:-left-[10em] -left-[5em]  top-[10%]  w-[40%]  overflow-hidden pointer-events-none z-30  ">
         <Image
           src={LeftCloud}
           alt="Left Cloud"

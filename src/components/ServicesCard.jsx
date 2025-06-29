@@ -22,7 +22,7 @@ export const ServicesCard = ({ title, description, slogan }) => {
         <p className="text-[2.25em] text-[#111020] w-full">{title}</p>
         <p
           className="text-[1.25em] w-full font-light text-black"
-          style={{ fontFamily: "var(--font-outfit)", opacity: 0.45 }}
+          style={{ fontFamily: "var(--font-subtitle)", opacity: 0.45 }}
         >
           {description}
         </p>

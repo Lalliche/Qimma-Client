@@ -1,43 +1,48 @@
 "use client";
-
-import { useTranslations, useLocale } from "next-intl";
-import { useRouter, usePathname } from "@/i18n/navigation";
-import { setCookie } from "cookies-next";
-import Us from "@/components/Sections/Us";
-import BlobGradient from "@/components/Sections/BlobGradient";
-import Services from "@/components/Sections/Services";
-import WhyUs from "@/components/Sections/WhyUs";
-import JoinUs from "@/components/Sections/JoinUs";
-import Footer from "@/components/Sections/Footer";
-import Header from "@/components/Sections/Header";
+import { lazy, Suspense } from "react";
 import ScrollRevealSectionOnce from "@/hooks/ScrollRevealSectionOnce";
 
-export default function HomePage() {
-  /* const t = useTranslations("HomePage"); */
+// Lazy-loaded sections
+const BlobGradient = lazy(() => import("@/components/Sections/BlobGradient"));
+const Us = lazy(() => import("@/components/Sections/Us"));
+const Services = lazy(() => import("@/components/Sections/Services"));
+const WhyUs = lazy(() => import("@/components/Sections/WhyUs"));
+const JoinUs = lazy(() => import("@/components/Sections/JoinUs"));
+const Footer = lazy(() => import("@/components/Sections/Footer"));
+const Header = lazy(() => import("@/components/Sections/Header"));
 
+export default function HomePage() {
   return (
     <div className="relative overflow-visible flex flex-col items-center gap-[2em]">
-      {" "}
-      <div className="w-full md:p-[1em] p-[2em] " id="Hero">
-        <BlobGradient />
-      </div>{" "}
-      <Header />
-      <div id="AboutUs" className=" w-full">
-        <ScrollRevealSectionOnce className="duration-1000 delay-200">
+      <div className="w-full md:p-[1em] p-[2em]" id="Hero">
+        <Suspense fallback={null}>
+          <BlobGradient />
+        </Suspense>
+      </div>
+
+      <Suspense fallback={null}>
+        <Header />
+      </Suspense>
+
+      <div id="AboutUs" className="w-full">
+        <Suspense fallback={<div className="min-h-[200px]" />}>
           <Us />
-        </ScrollRevealSectionOnce>
+        </Suspense>
       </div>
-      <ScrollRevealSectionOnce className="duration-1000 delay-200">
-        <div id="Services" className=" w-full">
+
+      <div id="Services" className="w-full">
+        <Suspense fallback={<div className="min-h-[200px]" />}>
           <Services />
-        </div>
-      </ScrollRevealSectionOnce>
-      <div id="WhyUs" className=" w-full">
-        <ScrollRevealSectionOnce className="duration-1000 delay-200">
-          <WhyUs />
-        </ScrollRevealSectionOnce>
+        </Suspense>
       </div>
-      <div className="relative w-full  overflow-hidden  ">
+
+      <div id="WhyUs" className="w-full">
+        <Suspense fallback={<div className="min-h-[200px]" />}>
+          <WhyUs />
+        </Suspense>
+      </div>
+
+      <div className="relative w-full overflow-hidden">
         <div
           className="absolute inset-0 z-[-2] pointer-events-none"
           style={{
@@ -45,12 +50,17 @@ export default function HomePage() {
             opacity: 0.9,
           }}
         />
-        <div id="JoinUs" className=" w-full">
-          <JoinUs />
+
+        <div id="JoinUs" className="w-full">
+          <Suspense fallback={<div className="min-h-[200px]" />}>
+            <JoinUs />
+          </Suspense>
         </div>
 
-        <div className=" w-full">
-          <Footer />
+        <div className="w-full">
+          <Suspense fallback={<div className="min-h-[200px]" />}>
+            <Footer />
+          </Suspense>
         </div>
       </div>
     </div>

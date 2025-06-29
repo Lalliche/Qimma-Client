@@ -33,7 +33,7 @@ const TranslationButton = () => {
 
   return (
     <div className="relative z-50">
-      {/* SVG Gradient */}
+      {/* SVG Gradient Definition */}
       <svg width="0" height="0" className="absolute pointer-events-none">
         <linearGradient id="icon-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
           <stop stopColor="#69D2FF" offset="0%" />
@@ -43,7 +43,7 @@ const TranslationButton = () => {
         </linearGradient>
       </svg>
 
-      {/* Button */}
+      {/* Button with gradient border */}
       <div
         onClick={() => setOpen(!open)}
         onMouseEnter={() => setHovered(true)}
@@ -51,11 +51,19 @@ const TranslationButton = () => {
         className="group flex items-center justify-center p-[0.625em] aspect-square bg-black rounded-full 
                    transition-all duration-300 ease-in-out cursor-pointer relative"
       >
+        {/* Gradient border */}
+        <div
+          className={`absolute -inset-0.5 rounded-full bg-gradient-to-r from-[#69D2FF] via-[#00CFFF] via-[#458AEF] to-[#833CFE] transition-opacity duration-300 z-[-1] ${
+            isHovered ? "opacity-100" : "opacity-0"
+          } md:opacity-0 md:group-hover:opacity-100 opacity-100`}
+        />
+
+        {/* Icon wrapper */}
         <div className="flex items-center justify-center p-[0.5em] aspect-square bg-white rounded-full transition-all duration-300 ease-in-out">
           <IoLanguage
-            size={24}
+            className="sm:text-[1.5em] text-[1.25em] "
             style={{
-              fill: isHovered ? "url(#icon-gradient)" : "#000000",
+              fill: "url(#icon-gradient)",
               transition: "fill 0.3s ease-in-out",
             }}
           />
@@ -66,7 +74,9 @@ const TranslationButton = () => {
       {open && (
         <div
           className={`absolute mt-[0.5em] w-fit min-w-[7em] bg-[#090812] text-white rounded-[1em] shadow-lg p-2 z-50 animate-dropdown ${
-            currentLocale === "ar" ? "left-0" : "right-0"
+            currentLocale === "ar"
+              ? "left-[2.2em] xs:left-0"
+              : " right-[2.2em] xs:right-0 "
           }`}
         >
           <button
