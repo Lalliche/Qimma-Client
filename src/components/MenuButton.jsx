@@ -23,7 +23,7 @@ const MenuButton = () => {
   const segments = pathname.split("/");
   const currentLocale = segments[1];
   const locale = Cookies.get("NEXT_LOCALE") || "en";
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+  const baseUrl = typeof window !== "undefined" ? window.location.origin : "";
 
   const links = [
     { text: t("AboutUs"), redirection: `${baseUrl}/${locale}#AboutUs` },
