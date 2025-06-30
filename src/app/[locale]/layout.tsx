@@ -4,6 +4,7 @@ import { routing } from "@/i18n/routing";
 import "@/app/globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 interface Props {
   children: React.ReactNode;
@@ -67,6 +68,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
           <Analytics />
+          <SpeedInsights />
         </NextIntlClientProvider>
       </body>
     </html>
