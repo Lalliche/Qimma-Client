@@ -7,7 +7,7 @@ import LCloud from "@/app/assets/LCloud.png";
 import Form from "./Form";
 import Footer from "@/components/Sections/Footer";
 
-const BgBlur = () => {
+export const BgBlur = () => {
   return (
     <div
       className="absolute inset-0 top-20 z-[-2] pointer-events-none "
