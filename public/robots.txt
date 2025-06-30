@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://qimmalearning.com
+Host: https://www.qimmalearning.com
 
 # Sitemaps
-Sitemap: https://qimmalearning.com/sitemap.xml
+Sitemap: https://www.qimmalearning.com/sitemap.xml
