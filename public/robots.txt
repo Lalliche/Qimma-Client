@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://qimmalearning.com
+
+# Sitemaps
+Sitemap: https://qimmalearning.com/sitemap.xml
