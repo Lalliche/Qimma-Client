@@ -107,5 +107,11 @@
     "invalidEmail": "Please enter a valid email address",
     "invalidPhone": "Phone number must be a valid Algerian number",
     "successMessage": "Submitted successfully!"
+  },
+  "Errors": {
+    "notFoundMessageLine1": "Oops! This page",
+    "notFoundMessageLine2": "you’re looking for is",
+    "notFoundMessageLine3": "not found",
+    "cta": "Back to Home"
   }
 }
