@@ -1,6 +1,6 @@
 "use client";
 import { useTranslations } from "next-intl";
-import { BgBlur } from "./register/page";
+import BgBlur from "@/components/BgBlur";
 import Header from "@/components/Sections/Header";
 import Footer from "@/components/Sections/Footer";
 import Button from "@/components/Button";

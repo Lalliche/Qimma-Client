@@ -6,18 +6,7 @@ import RCloud from "@/app/assets/RCloud.png";
 import LCloud from "@/app/assets/LCloud.png";
 import Form from "./Form";
 import Footer from "@/components/Sections/Footer";
-
-export const BgBlur = () => {
-  return (
-    <div
-      className="absolute inset-0 top-20 z-[-2] pointer-events-none "
-      style={{
-        background: "linear-gradient(to bottom, #eef2ff 0%, #D7EBFF 100%)",
-        opacity: 0.9,
-      }}
-    />
-  );
-};
+import BgBlur from "@/components/BgBlur";
 
 const LeftCloud = () => {
   return (
