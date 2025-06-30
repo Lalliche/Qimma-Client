@@ -107,5 +107,11 @@
     "invalidEmail": "يرجى إدخال بريد إلكتروني صالح",
     "invalidPhone": "رقم الهاتف يجب أن يكون جزائريًا صحيحًا",
     "successMessage": "تم الإرسال بنجاح!"
+  },
+  "Errors": {
+    "notFoundMessageLine1": "عذرًا! هذه الصفحة",
+    "notFoundMessageLine2": "التي تبحث عنها",
+    "notFoundMessageLine3": "غير موجودة",
+    "cta": "العودة إلى الصفحة الرئيسية"
   }
 }
