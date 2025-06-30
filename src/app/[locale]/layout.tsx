@@ -1,7 +1,8 @@
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-import "@/app/globals.css"; // make sure this path is correct
+import "@/app/globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 interface Props {
   children: React.ReactNode;
@@ -31,6 +32,8 @@ export default async function LocaleLayout({ children, params }: Props) {
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
+
+          <Analytics />
         </NextIntlClientProvider>
       </body>
     </html>
