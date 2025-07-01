@@ -106,7 +106,21 @@
     "warning": "This field is required",
     "invalidEmail": "Please enter a valid email address",
     "invalidPhone": "Phone number must be a valid Algerian number",
-    "successMessage": "Submitted successfully!"
+    "successMessage": "Submitted successfully!",
+    "clockTitle1": "Hurry up!",
+    "clockTitle2": "Clock is ticking",
+    "clockDesc": "Don’t miss this opportunity, let’s build something meaningful — together!",
+    "detailsTitle": "Event Details",
+    "whenTitle": "When?",
+    "whenDesc": "Sunday, 6th July 2025 10:00 - 12:00 A.M",
+    "whereTitle": "Where?",
+    "whereDesc": "Skill Academy - Oued El Wahch - Skikda",
+    "whatToExpectTitle": "What to expect?",
+    "whatToExpectDesc": "Explore our learning programs, offers, and much more",
+    "day": "Days",
+    "hour": "Hours",
+    "minute": "Minutes",
+    "second": "Seconds"
   },
   "Errors": {
     "notFoundMessageLine1": "Oops! This page",
