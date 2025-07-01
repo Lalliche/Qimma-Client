@@ -106,7 +106,22 @@
     "warning": "هذا الحقل مطلوب",
     "invalidEmail": "يرجى إدخال بريد إلكتروني صالح",
     "invalidPhone": "رقم الهاتف يجب أن يكون جزائريًا صحيحًا",
-    "successMessage": "تم الإرسال بنجاح!"
+    "successMessage": "تم الإرسال بنجاح!",
+    "clockTitle1": "أسرع!",
+    "clockTitle2": "الساعة تدق",
+    "clockDesc": "لا تفوّت هذه الفرصة، دعنا نبني شيئًا ذا معنى — معًا!",
+    "detailsTitle": "تفاصيل الافتتاح",
+
+    "whenTitle": "متى؟",
+    "whenDesc": "الأحد، 6 جويليه 2025 من الساعة 10:00 إلى 12:00 صباحًا",
+    "whereTitle": "أين؟",
+    "whereDesc": "Skill Academy - واد الوحش - سكيكدة",
+    "whatToExpectTitle": "ماذا تتوقع؟",
+    "whatToExpectDesc": "استكشف برامجنا التعليمية، العروض، والمزيد",
+    "day": "أيام",
+    "hour": "ساعات",
+    "minute": "دقائق",
+    "second": "ثوانٍ"
   },
   "Errors": {
     "notFoundMessageLine1": "عذرًا! هذه الصفحة",
