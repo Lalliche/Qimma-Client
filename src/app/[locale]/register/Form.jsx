@@ -183,7 +183,6 @@ const Form = () => {
         })
         .catch((err) => {
           console.error("❌ Submission error:", err);
-          // You can show an error message here
         });
     }
   };
