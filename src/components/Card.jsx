@@ -103,42 +103,51 @@ const AnimationCard = ({ title, description, icon }) => {
         />
       )}
 
-      {/* Top-Tear Layer */}
-      {showLayer && (
-        <div
-          ref={backgroundRef}
-          className={`absolute inset-0 z-0 overflow-hidden ${animateClass}`}
-          style={{
-            background: "linear-gradient(to bottom, #ffffff, #e0f3ff)",
-            transition: "all 0.5s ease-in-out",
-          }}
-        >
-          <div
-            className="card-gradient blob1"
-            style={{ top: "-50%", left: "-50%" }}
-          />
-          <div
-            className="card-gradient blob1"
-            style={{ top: "70%", left: "-20%" }}
-          />
-          <div
-            className="card-gradient blob3"
-            style={{ top: "0%", left: "70%" }}
-          />
-          <div
-            className="card-gradient blob3"
-            style={{ top: "50%", left: "50%" }}
-          />
-          <div
-            className="card-gradient blob2"
-            style={{ top: "-30%", left: "70%" }}
-          />
-          <div
-            className="card-gradient blob3"
-            style={{ top: "20%", left: "90%" }}
-          />
-        </div>
-      )}
+      {/* Background Layer */}
+      <div
+        ref={canShowDots && showLayer ? backgroundRef : null}
+        className={`absolute inset-0 z-0 overflow-hidden ${
+          canShowDots && showLayer ? animateClass : ""
+        }`}
+        style={{
+          background: canShowDots
+            ? showLayer
+              ? "linear-gradient(to bottom, #ffffff, #e0f3ff)"
+              : undefined
+            : "linear-gradient(to bottom, #0B1D72, #0BACFF)",
+          transition: "all 0.5s ease-in-out",
+        }}
+      >
+        {/* Only render blobs if in animated state */}
+        {canShowDots && showLayer && (
+          <>
+            <div
+              className="card-gradient blob1"
+              style={{ top: "-50%", left: "-50%" }}
+            />
+            <div
+              className="card-gradient blob1"
+              style={{ top: "70%", left: "-20%" }}
+            />
+            <div
+              className="card-gradient blob3"
+              style={{ top: "0%", left: "70%" }}
+            />
+            <div
+              className="card-gradient blob3"
+              style={{ top: "50%", left: "50%" }}
+            />
+            <div
+              className="card-gradient blob2"
+              style={{ top: "-30%", left: "70%" }}
+            />
+            <div
+              className="card-gradient blob3"
+              style={{ top: "20%", left: "90%" }}
+            />
+          </>
+        )}
+      </div>
 
       {/* Card Content */}
       <div className="relative z-20 flex flex-col items-center justify-center gap-[1.125em] transition-all duration-500">
@@ -156,6 +165,7 @@ const AnimationCard = ({ title, description, icon }) => {
         >
           {icon}
         </div>
+
         <p
           className="text-[2em] text-center leading-tight transition-all duration-500"
           style={{
