@@ -8,10 +8,31 @@ const AnimationCard = ({ title, description, icon }) => {
   const [showLayer, setShowLayer] = useState(false);
   const [animateClass, setAnimateClass] = useState("");
   const [clipCenter, setClipCenter] = useState({ x: "50%", y: "0%" });
+  const [canShowDots, setCanShowDots] = useState(true);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const isSmall = window.innerWidth < 850;
+      setCanShowDots(!isSmall);
+
+      if (isSmall) {
+        setShowLayer(true);
+        setIsHovered(true);
+        setAnimateClass("card-reveal");
+      } else {
+        setShowLayer(false);
+        setIsHovered(false);
+      }
+    };
+
+    handleResize(); // Call once on mount
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const overlay = overlayRef.current;
-    if (!overlay) return;
+    if (!canShowDots || !overlay) return;
 
     const dotSize = 3;
     const spacing = 20;
@@ -35,15 +56,16 @@ const AnimationCard = ({ title, description, icon }) => {
       }
     }
 
-    // Toggle class for smooth color transition
     overlay.childNodes.forEach((dot) => {
       if (dot instanceof HTMLElement) {
         dot.classList.toggle("card-dot-hovered", isHovered);
       }
     });
-  }, [isHovered]);
+  }, [isHovered, canShowDots]);
 
   const handleMouseEnter = (e) => {
+    if (!canShowDots) return;
+
     const rect = e.currentTarget.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width) * 100;
     const y = ((e.clientY - rect.top) / rect.height) * 100;
@@ -54,9 +76,10 @@ const AnimationCard = ({ title, description, icon }) => {
   };
 
   const handleMouseLeave = () => {
+    if (!canShowDots) return;
     setAnimateClass("card-hide");
     setIsHovered(false);
-    setTimeout(() => setShowLayer(false), 500); // matches animation duration
+    setTimeout(() => setShowLayer(false), 500);
   };
 
   useEffect(() => {
@@ -65,67 +88,20 @@ const AnimationCard = ({ title, description, icon }) => {
       backgroundRef.current.style.setProperty("--y", clipCenter.y);
     }
   }, [clipCenter]);
-  7;
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setShowLayer(true);
-        setIsHovered(true);
-        setAnimateClass("card-reveal");
-
-        // Delay dot generation until the overlay exists and has dimensions
-        setTimeout(() => {
-          const overlay = overlayRef.current;
-          if (!overlay || overlay.childNodes.length > 0) return;
-
-          const dotSize = 3;
-          const spacing = 20;
-          const width = overlay.offsetWidth;
-          const height = overlay.offsetHeight;
-
-          for (let y = 0; y <= height; y += spacing) {
-            for (let x = 0; x <= width; x += spacing) {
-              const dot = document.createElement("div");
-              dot.classList.add("card-dot");
-              dot.style.position = "absolute";
-              dot.style.width = `${dotSize}px`;
-              dot.style.height = `${dotSize}px`;
-              dot.style.borderRadius = "50%";
-              dot.style.left = `${x}px`;
-              dot.style.top = `${y}px`;
-              overlay.appendChild(dot);
-            }
-          }
-
-          overlay.childNodes.forEach((dot) => {
-            if (dot instanceof HTMLElement) {
-              dot.classList.add("card-dot-hovered");
-            }
-          });
-        }, 100); // Wait ~1 frame for DOM to render
-      } else {
-        setShowLayer(false);
-        setIsHovered(false);
-      }
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   return (
     <div
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="h-full relative w-full  overflow-hidden rounded-[1.5em]  bg-white p-[2.25em] py-[3em] transition-all duration-500"
+      className="h-full relative w-full overflow-hidden rounded-[1.5em] bg-white p-[2.25em] py-[3em] transition-all duration-500"
     >
       {/* Dot Overlay */}
-      <div
-        ref={overlayRef}
-        className="pointer-events-none  absolute inset-0 z-10 "
-      />
+      {canShowDots && (
+        <div
+          ref={overlayRef}
+          className="pointer-events-none absolute inset-0 z-10"
+        />
+      )}
 
       {/* Top-Tear Layer */}
       {showLayer && (
@@ -165,7 +141,7 @@ const AnimationCard = ({ title, description, icon }) => {
       )}
 
       {/* Card Content */}
-      <div className="relative  z-20 flex flex-col items-center justify-center gap-[1.125em] transition-all duration-500">
+      <div className="relative z-20 flex flex-col items-center justify-center gap-[1.125em] transition-all duration-500">
         <div
           className="flex items-center justify-center size-[7.5em] rounded-full border transition-all duration-500"
           style={{
@@ -183,8 +159,6 @@ const AnimationCard = ({ title, description, icon }) => {
         <p
           className="text-[2em] text-center leading-tight transition-all duration-500"
           style={{
-            /*    lineHeight: "1.2em",
-            height: "2.4em", */
             background: isHovered
               ? "none"
               : "radial-gradient(circle, #5B5B5BFF 0%, #666666 100%)",
@@ -192,8 +166,6 @@ const AnimationCard = ({ title, description, icon }) => {
             WebkitBackgroundClip: isHovered ? "unset" : "text",
             WebkitTextFillColor: isHovered ? "#ffffff" : "transparent",
             overflow: "hidden",
-            /*  display: "-webkit-box",
-             WebkitLineClamp: 2, */
             WebkitBoxOrient: "vertical",
           }}
         >

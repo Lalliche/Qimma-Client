@@ -15,7 +15,7 @@ const Separation = () => {
 
 const TimeUnit = ({ value, label }) => {
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="flex-1 flex flex-col justify-center items-center">
       <p
         className="bg-gradient-to-b  from-[#111020] to-[#1E3771] bg-clip-text text-transparent sm:text-[5em] text-[3em] "
         style={{ fontFamily: "var(--font-cal-sans)" }}
