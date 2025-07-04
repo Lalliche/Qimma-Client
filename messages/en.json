@@ -79,7 +79,7 @@
   },
   "Footer": {
     "desc": "You're closer to the top than you think.",
-    "rights": "All copyrights reserved. 2025",
+    "rights": "© 2025 Qimma . All rights reserved.",
     "learning": "Learning",
     "digital": "Digital",
     "events": "Events"
@@ -127,5 +127,15 @@
     "notFoundMessageLine2": "you’re looking for is",
     "notFoundMessageLine3": "not found",
     "cta": "Back to Home"
+  },
+  "LinkTree": {
+    "title": "Find all QIMMA’s official platforms, social media accounts, and services in one place. Start exploring now!",
+    "instagram": "Instgram",
+    "fb": "Facebook",
+    "ds": "Discord Server",
+    "lin": "Linkedin",
+    "tikTok": "Tiktok",
+    "web": "Sign Up for Courses",
+    "footer": "Stay updated with our latest courses and events"
   }
 }

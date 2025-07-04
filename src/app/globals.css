@@ -528,6 +528,11 @@ body {
 .animate-fadeInUp {
   animation: fadeInUp 0.4s ease-out forwards;
 }
+.logo-image {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+  will-change: transform, opacity;
+}
 
 .separation-gradient {
   background: linear-gradient(to right, transparent, #458aef, #a1d0ec);
