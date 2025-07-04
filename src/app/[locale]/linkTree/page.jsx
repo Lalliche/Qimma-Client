@@ -12,6 +12,7 @@ import {
   FaFacebook,
   FaDiscord,
   FaTiktok,
+  FaLocationArrow,
 } from "react-icons/fa";
 import { TbWorld } from "react-icons/tb";
 import Link from "next/link";
@@ -103,6 +104,11 @@ const page = () => {
       title: t("web"),
       icon: TbWorld,
       link: "https://www.qimmalearning.com",
+    },
+    {
+      title: t("loc"),
+      icon: FaLocationArrow,
+      link: "https://maps.app.goo.gl/QwpUP6QNETP3oVd1A",
     },
   ];
 
