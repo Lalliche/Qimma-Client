@@ -1,6 +1,5 @@
 "use client";
 import { lazy, Suspense } from "react";
-import ScrollRevealSectionOnce from "@/hooks/ScrollRevealSectionOnce";
 
 // Lazy-loaded sections
 const BlobGradient = lazy(() => import("@/components/Sections/BlobGradient"));

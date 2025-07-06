@@ -10,8 +10,9 @@ import BgBlur from "@/components/BgBlur";
 import CountDown from "./CountDown";
 import Details from "./Details";
 import { useTranslations } from "next-intl";
+import ComingSoon from "@/components/ComingSoon";
 
-const LeftCloud = () => {
+/* const LeftCloud = () => {
   return (
     <div className="absolute left-0  scale-150  top-[0%]  lg:w-[20%] w-[40%]  overflow-hidden pointer-events-none z-30  ">
       <Image
@@ -33,12 +34,13 @@ const RightCloud = () => {
       />
     </div>
   );
-};
+}; */
 
 const RegisterPage = () => {
   const t = useTranslations("Register");
-  return (
-    <div className="relative  overflow-visible flex flex-col items-center gap-[2em]">
+  return <ComingSoon />;
+  {
+    /* <div className="relative  overflow-visible flex flex-col items-center gap-[2em]">
       <div className="relative min-h-screen pt-[10em] gap-[8em]  w-full flex flex-col justify-between items-center overflow-hidden ">
         <BgBlur />
         <LeftCloud />
@@ -76,8 +78,9 @@ const RegisterPage = () => {
       </div>
 
       <Header forceBlur />
-    </div>
-  );
+    </div> */
+  }
+
   /*  */
 };
 

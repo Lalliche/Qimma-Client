@@ -138,5 +138,10 @@
     "web": "Sign Up for Courses",
     "footer": "Stay updated with our latest courses and events",
     "loc": "Localisation"
+  },
+  "OpenDayOff": {
+    "title": "Registrations Closed",
+    "description": "Thank you for your interest. Registrations for the Open Day are now closed.",
+    "cta": "Back to Home"
   }
 }
